@@ -12,4 +12,4 @@ spring:
             enable: true
         debug: true
     username: froznfox4@gmail.com
-    password: passwordddd
+    password: password
