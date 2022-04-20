@@ -11,5 +11,5 @@ spring:
           starttls:
             enable: true
         debug: true
-    username: froznfox4@gmail.com
-    password: password
+    username: ${MAILUSERNAME}
+    password: ${MAILUSERPASS}
