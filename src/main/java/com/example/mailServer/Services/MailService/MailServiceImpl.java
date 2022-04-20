@@ -18,12 +18,7 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public void sendMail(Collection<String> collection) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("UrGPU");
-        message.setTo(collection.toArray(String[]::new));
-        message.setSubject("TestMessage");
-        message.setText("Test");
-        javaMailSender.send(message);
+        sendMail(collection.toArray(String[]::new));
     }
 
     @Override
