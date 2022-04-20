@@ -20,7 +20,13 @@ public class MailController {
 
     @PostMapping("/sendEmail")
     public ResponseEntity<?> sendEmail(@RequestBody Map<String, Collection<String>> emails ) {
-        mailService.sendMail(emails.getOrDefault("emails", List.of() ));
+        mailService.sendMails(emails.getOrDefault("emails", List.of() ));
         return ResponseEntity.ok().body("Email sent");
+    }
+
+    @PostMapping("/sendEmailAsync")
+    public ResponseEntity<?> sendEmailAsync(@RequestBody Map<String, Collection<String>> emails ) {
+        mailService.sendMailsAsync(emails.getOrDefault("emails", List.of()));
+        return ResponseEntity.ok().body("Email in proceed");
     }
 }
